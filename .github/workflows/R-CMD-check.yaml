@@ -39,6 +39,10 @@ jobs:
           http-user-agent: ${{ matrix.config.http-user-agent }}
           use-public-rspm: true
 
+      - name: Additional Repositories
+        run: |
+          echo "options(repos = c(thinkropen = 'https://thinkr-open.r-universe.dev', CRAN = 'https://cran.rstudio.com/'))" | tee /usr/local/lib/R/etc/Rprofile.site | tee /usr/lib/R/etc/Rprofile.site
+
       - uses: r-lib/actions/setup-r-dependencies@v1
         with:
           extra-packages: rcmdcheck

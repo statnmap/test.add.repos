@@ -8,5 +8,9 @@
 #' @examples
 #' my_fun()
 my_fun <- function() {
-  cranology::cran_packages_history
+  if (requireNamespace("cranology", quietly = TRUE)) {
+    cranology::cran_packages_history
+  } else {
+    "no cranology"
+  }
 }

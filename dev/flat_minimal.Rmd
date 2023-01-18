@@ -28,7 +28,11 @@ pkgload::load_all(export_all = FALSE)
 #'
 #' @examples
 my_fun <- function() {
-  cranology::cran_packages_history
+  if (requireNamespace("cranology", quietly = TRUE)) {
+    cranology::cran_packages_history
+  } else {
+    "no cranology"
+  }
 }
 ```
 
@@ -46,5 +50,6 @@ test_that("my_fun works", {
 ```{r development-inflate, eval=FALSE}
 # Run but keep eval=FALSE to avoid infinite loop
 # Execute in the console directly
-fusen::inflate(flat_file = "dev/flat_minimal.Rmd", vignette_name = "Minimal")
+fusen::inflate(flat_file = "dev/flat_minimal.Rmd", vignette_name = "Minimal", check = FALSE, document = FALSE, open_vignette = FALSE, overwrite = TRUE)
+attachment::att_amend_desc(pkg_ignore = "cranology", extra.suggests = "cranology")
 ```

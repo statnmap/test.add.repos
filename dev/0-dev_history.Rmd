@@ -61,6 +61,7 @@ usethis::use_news_md()
 # Pipe
 usethis::use_pipe()
 usethis::use_build_ignore(".Rhistory")
+usethis::use_git_ignore(".Rhistory")
 
 # package-level documentation
 usethis::use_package_doc()

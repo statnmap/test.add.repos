@@ -4,3 +4,5 @@
 ^test\.add\.repos\.Rproj$
 ^\.Rproj\.user$
 ^\.Rhistory$
+^\.github$
+^README\.Rmd$

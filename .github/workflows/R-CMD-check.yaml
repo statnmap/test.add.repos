@@ -44,6 +44,7 @@ jobs:
           cat(
           "\noptions(repos = c(thinkropen = 'https://thinkr-open.r-universe.dev', getOption('repos')))",
           file = ".Rprofile", append = TRUE)
+          source(".Rprofile")
         shell: Rscript {0}
 
       - uses: r-lib/actions/setup-r-dependencies@v2

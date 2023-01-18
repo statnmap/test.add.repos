@@ -1,0 +1,6 @@
+
+^dev$
+^LICENSE\.md$
+^test\.add\.repos\.Rproj$
+^\.Rproj\.user$
+^\.Rhistory$

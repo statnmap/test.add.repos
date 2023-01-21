@@ -38,14 +38,7 @@ jobs:
           r-version: ${{ matrix.config.r }}
           http-user-agent: ${{ matrix.config.http-user-agent }}
           use-public-rspm: true
-
-      - name: Additional Repositories
-        run: |
-          cat(
-          "\noptions(repos = c(thinkropen = 'https://thinkr-open.r-universe.dev', getOption('repos')))",
-          file = ".Rprofile", append = TRUE)
-          source(".Rprofile")
-        shell: Rscript {0}
+          extra-repositories: https://thinkr-open.r-universe.dev
 
       - uses: r-lib/actions/setup-r-dependencies@v2
         with:
